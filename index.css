@@ -1,0 +1,150 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: rgb(191, 206, 156);
+}
+header {
+    display: flex;
+    justify-content: space-between;
+    background-color: rgb(255, 0, 0);
+    align-items: center;
+    padding: 8px 32px;
+}
+
+.logo {
+    width: 148px;
+    background-color: rgb(255, 0, 0);
+}
+
+.burger {
+    width: 40px;
+    background-color: rgb(255, 0, 0);
+}
+
+.burger span {
+    display: block;
+    height: 4px;
+    background: white;
+    margin: 6px 0;
+}
+
+.midpic {
+    width: 80%;
+    height: 300px;        
+    margin: 0 8px 8px ;         
+    overflow: hidden;   
+    object-fit: cover; 
+}
+
+.titles {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 72px;
+    margin: 8px;
+}
+
+.titleOne {
+    font-weight: bold;
+    font-size: 36px;
+}
+
+.rating {
+    color: rgb(255, 0, 0);
+}
+
+.navbar {
+    display: flex;
+    align-items: center;
+    height: 56px;
+    width: 80%;
+    background-color: rgb(247, 61, 5);
+}
+
+.arrow {
+    height: 75%;
+    margin-left: 8px;
+    background: none;
+}
+
+.chapters {
+    background: none;
+    display: flex;
+    gap: 16px;;
+}
+
+.chapters a {
+    margin: 8px;
+    background: none;
+    text-decoration: none;
+    color: black;
+}
+
+.chapters a:hover {
+    text-decoration:underline;
+    font-weight: bold;
+}
+
+.twoDöner, .ayran, .tee {
+    width: 80%;
+    height: 200px;        
+    margin: 8px auto;         
+    overflow: hidden;     
+    border-radius: 12px;  
+    float: left;
+}
+
+.twoDöner img, .ayran img, .tee img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;    
+}
+
+h2 {
+    clear: left;  
+    margin-left: 8px; 
+}
+
+.dish-groupe {
+    width: 80%;
+    position: relative;
+    border: 3px solid #fd0909;
+    box-shadow: 3px 3px 8px #444141;
+    background-color: #cf8888;
+    padding: 10px;
+    margin-top: 10px;
+    transition: transform 0.15s ease, background-color 0.3s ease;
+}
+
+.dish-groupe:hover {
+    transform: translateY(-4px);
+    background-color: #a7b84a;
+    box-shadow: 12px 12px 12px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+}
+
+.order-button {
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    border: none;
+    background: transparent;
+    cursor: pointer;
+    padding: 4px;
+    transition: 0.5s ease, transform 0.5s ease;
+}
+
+.dish-groupe:hover .order-button {
+    background: white;
+    border-radius: 50%;
+}
+
+.orderButton img {
+    width: 24px;
+    height: auto;
+}

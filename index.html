@@ -4,45 +4,10 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Bestellapp</title>
-
-        <style>
-        body {
-            margin: 0;
-            background-color: rgb(231, 108, 31)
-        }
-
-        nav {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 8px 32px 8px 32px;
-        }
-
-        .logo {
-            width: 148px;
-        }
-
-        .burger {
-            width: 40px;
-        }
-
-        .burger span {
-            display: block;
-            height: 4px;
-            background: white;
-            margin: 6px 0;
-        }
-
-        .midpic {
-            width: 100%;
-            height: 25%;
-        }
-
-        </style>
-
+        <link rel="stylesheet" href="index.css">
     </head>
     <body>
-        <nav>
+        <header>
             <img class="logo" src="BestellApp_Icons/Material/Logo/Logo.png"
                 alt="Logo">
 
@@ -51,9 +16,53 @@
                 <span></span>
                 <span></span>
             </div>
-        </nav>
+        </header>
+
         <img class="midpic" src="img/2sif-pulao-with-mix-kebab-7262666_1920.jpg"
             alt="doenerkebab">
+        <div class="titles">
+            <h2 class="titleOne">UltrAslaN</h2>
+            <p class="rating">Bewertung: 4,3 von 5 Sternen</p>
+        </div>
 
+        <div class="navbar">
+            <img class="arrow" src="img/pfeil.png" alt>
+            <div class="chapters">
+                <a href="#hauptgerichte">Hauptgerichte</a>
+                <a href="#drinks">Getränke</a>
+                <a href="#dessert">Dessert</a>
+            </div>
+        </div>
+
+        <section id="hauptgerichte">
+            <div class="twoDöner">
+                <img src="img/zweidöner.jpeg" alt="Hauptgericht Banner">
+            </div>
+
+            <h2>Hauptgerichte</h2>
+            <div class="dishes-list" id="main-list"></div>
+        </section>
+
+        <section id="drinks">
+            <div class="ayran">
+                <img src="img/ayran.jpg" alt="Getränke Banner">
+            </div>
+
+            <h2>Getränke</h2>
+            <div class="dishes-list" id="drinks-list"></div>
+        </section>
+
+        <section id="dessert">
+            <div class="tee">
+                <img src="img/turkishteacay.jpg" alt="Dessert Banner">
+            </div>
+
+            <h2>Dessert</h2>
+            <div class="dishes-list" id="dessert-list"></div>
+        </section>
+
+        <script src="js/db.js"></script>
+        <script src="js/templates.js"></script>
+        <script src="script.js"></script>
     </body>
 </html>
