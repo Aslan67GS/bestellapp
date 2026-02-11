@@ -6,8 +6,9 @@
 }
 
 body {
-    background-color: rgb(191, 206, 156);
+    background-color: rgb(2, 123, 236);
 }
+
 header {
     display: flex;
     justify-content: space-between;
@@ -63,7 +64,7 @@ header {
     align-items: center;
     height: 56px;
     width: 80%;
-    background-color: rgb(247, 61, 5);
+    background-color: rgb(209, 88, 51);
 }
 
 .arrow {
@@ -90,13 +91,23 @@ header {
     font-weight: bold;
 }
 
+.page-layout {
+    display: flex;
+    align-items: flex-start;
+    gap: 24px;
+    padding: 16px;
+}
+
+.content {
+    flex: 1;
+}
+
 .twoDöner, .ayran, .tee {
     width: 80%;
     height: 200px;        
-    margin: 8px auto;         
+    margin: 8px 0 8px 4px;         
     overflow: hidden;     
-    border-radius: 12px;  
-    float: left;
+    border-radius: 12px;
 }
 
 .twoDöner img, .ayran img, .tee img {
@@ -107,7 +118,6 @@ header {
 
 h2 {
     clear: left;  
-    margin-left: 8px; 
 }
 
 .dish-groupe {
@@ -116,7 +126,7 @@ h2 {
     border: 3px solid #fd0909;
     box-shadow: 3px 3px 8px #444141;
     background-color: #cf8888;
-    padding: 10px;
+    padding: 8px;
     margin-top: 10px;
     transition: transform 0.15s ease, background-color 0.3s ease;
 }
@@ -128,7 +138,7 @@ h2 {
     cursor: pointer;
 }
 
-.order-button {
+.orderButton {
     position: absolute;
     top: 16px;
     right: 16px;
@@ -147,4 +157,204 @@ h2 {
 .orderButton img {
     width: 24px;
     height: auto;
+}
+
+.footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #ff0000;
+    margin-top: 20px;
+}
+
+.footer-container {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    padding: 24px 0;
+    text-align: center;
+    max-width: 100%;
+    margin: 0 auto;
+}
+
+.footer-container img {
+    width: 128px;
+}
+
+.author {
+    padding-top: 10px;
+}
+
+.modal {
+    position: fixed;
+    inset: 0;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    z-index: 9999;
+    padding: 16px;
+}
+
+.modal.is-open {
+    display: flex;
+}
+
+.modal__overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.55);
+    backdrop-filter: blur(6px);
+}
+
+.modal__card {
+    position: relative;
+    width: min(520px, 92vw);
+    border-radius: 18px;
+    padding: 22px 22px 18px;
+    background: #0f172a;
+    color: #eaeaea;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.45);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    transform: translateY(8px) scale(0.98);
+    opacity: 0;
+    animation: modalIn 180ms ease-out forwards;
+}
+
+@keyframes modalIn {
+    to {
+        transform: translateY(0) scale(1);
+        opacity: 1;
+    }
+}
+
+.modal__close {
+    position: absolute;
+    right: 12px;
+    top: 10px;
+    width: 36px;
+    height: 36px;
+    border-radius: 10px;
+    border: 0;
+    background: rgba(255, 255, 255, 0.08);
+    color: #fff;
+    font-size: 22px;
+    cursor: pointer;
+}
+
+.modal__icon {
+    width: 52px;
+    height: 52px;
+    display: grid;
+    place-items: center;
+    border-radius: 14px;
+    background: rgba(255, 128, 8, 0.18);
+    font-size: 26px;
+    margin-bottom: 14px;
+}
+
+.modal__title {
+    margin: 0 0 6px;
+    font-size: 22px;
+}
+
+.modal__text {
+    margin: 0 0 16px;
+    color: #cbd5e1;
+}
+
+.modal__btn {
+    width: 100%;
+    border: 0;
+    cursor: pointer;
+    border-radius: 12px;
+    padding: 12px 14px;
+    background: #ff0000;
+    color: #fff;
+    font-weight: 700;
+    box-shadow: 0 10px 22px rgba(0, 0, 0, 0.25);
+}
+
+.modal__btn:hover {
+    filter: brightness(0.95);
+}
+
+/* Light mode auto brighter */
+@media (prefers-color-scheme: light) {
+    .modal__card {
+        background: #ffffff;
+        color: #111;
+        border: 1px solid rgba(0, 0, 0, 0.08);
+    }
+
+    .modal__text {
+        color: #444;
+    }
+
+    .modal__close {
+        color: #111;
+        background: rgba(0, 0, 0, 0.06);
+    }
+}
+
+@media (max-width: 640px) {
+    .titleOne {
+        font-size: 24px;
+    }
+
+    .midpic {
+        width: 100%;       /* volle Breite */
+        height: auto;      /* Höhe passt sich proportional an */
+        margin: 0;         /* optional, damit kein Rand links/rechts */
+    }
+
+    .navbar {
+        width: 100%;
+    }
+
+    .chapters a{
+        margin: 24px;
+    }
+
+    .page-layout {
+        flex-direction: column;  /* alles untereinander */
+        gap: 16px;               /* optional kleinerer Abstand */
+    }
+
+    .content {
+        width: 100%;             
+        max-width: 100%;         
+        margin: 0;                     
+    }
+
+    .twoDöner, .ayran, .tee, 
+    .dish-groupe {
+        width: 100%;             /* volle Breite der Container */
+        margin-left: 0;          /* optional, damit links kein Abstand bleibt */
+    }
+
+    .twoDöner img, .ayran img, .tee img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    .basket-sticky {
+        width: 100% !important;
+        max-width: 100% !important;
+        position: static;  /* hängt nun unter Content */
+        margin: 0;
+    }
+
+    .basket-sidebar {
+        flex: 0 0 auto;
+        width: 100%;
+        margin-top: 16px;
+    }
+}
+
+@media (max-width: 540px) {
+    .chapters{
+        display: block;
+    }
 }

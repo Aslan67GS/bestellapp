@@ -12,3 +12,22 @@ function dishTemplate(dish) {
     </div>
     `;
 }
+
+function basketItemTemplate(id, item) {
+    const linePrice = item.price * item.amount; // Gesamtpreis für diese Zeile
+
+    return `
+    <div class="basket-item">
+        <div class="basket-item-left">
+            <div class="basket-item-name">${item.name}</div>
+        </div>
+
+        <div class="basket-item-right">
+            <button class="basket-qty-btn" data-id="${id}" data-delta="-1">-</button>
+            <span class="basket-qty">${item.amount}</span>
+            <button class="basket-qty-btn" data-id="${id}" data-delta="1">+</button>
+            <div class="basket-line-total">${formatPrice(linePrice)}</div> <!-- nur hier -->
+        </div>
+    </div>
+    `;
+}

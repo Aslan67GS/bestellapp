@@ -5,6 +5,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Bestellapp</title>
         <link rel="stylesheet" href="index.css">
+        <link rel="stylesheet" href="css/cart.css">
     </head>
     <body>
         <header>
@@ -34,32 +35,101 @@
             </div>
         </div>
 
-        <section id="hauptgerichte">
-            <div class="twoDöner">
-                <img src="img/zweidöner.jpeg" alt="Hauptgericht Banner">
+        <main class="page-layout">
+
+            <div class="content">
+                <section id="hauptgerichte">
+                    <div class="twoDöner">
+                        <img src="img/zweidöner.jpeg" alt="Hauptgericht Banner">
+                    </div>
+
+                    <h2>Hauptgerichte</h2>
+                    <div class="dishes-list" id="main-list"></div>
+                </section>
+
+                <section id="drinks">
+                    <div class="ayran">
+                        <img src="img/ayran.jpg" alt="Getränke Banner">
+                    </div>
+
+                    <h2>Getränke</h2>
+                    <div class="dishes-list" id="drinks-list"></div>
+                </section>
+
+                <section id="dessert">
+                    <div class="tee">
+                        <img src="img/turkishteacay.jpg" alt="Dessert Banner">
+                    </div>
+
+                    <h2>Dessert</h2>
+                    <div class="dishes-list" id="dessert-list"></div>
+                </section>
             </div>
+            <aside class="basket-sticky" id="basket">
+                <h2 class="basket-title">Warenkorb</h2>
 
-            <h2>Hauptgerichte</h2>
-            <div class="dishes-list" id="main-list"></div>
-        </section>
+                <div class="basket-delivery">
+                    <span>Abholen</span>
 
-        <section id="drinks">
-            <div class="ayran">
-                <img src="img/ayran.jpg" alt="Getränke Banner">
+                    <label class="basket-switch">
+                        <input type="checkbox" aria-label="Liefern aktivieren">
+                        <span class="basket-slider" aria-hidden="true"></span>
+                    </label>
+
+                    <span>Liefern</span>
+                </div>
+
+                <div class="basket-items"></div>
+
+                <div class="basket-summary">
+                    <div class="basket-row">
+                        <span>Zwischensumme</span>
+                        <span class="basket-subtotal">0,00 €</span>
+                    </div>
+                    <div class="basket-row">
+                        <span>Lieferkosten</span>
+                        <span class="basket-delivery-cost">0,00 €</span>
+                    </div>
+                    <div class="basket-row basket-total">
+                        <span>Gesamt</span>
+                        <span class="basket-total-value">0,00 €</span>
+                    </div>
+                </div>
+
+                <button class="basket-order-btn">Bestellen</button>
+            </aside>
+        </main>
+
+        <footer class="footer">
+            <div class="footer-container">
+                <a href="./index.html">
+                    <img src="BestellApp_Icons/Material/Logo/Logo.png"
+                        alt="footer-logo">
+                </a>
+                <div class="author">
+                    <span><a href="https://www.twitch.tv/aslan67gs">©
+                            Aslan67GS</a></span>
+                </div>
             </div>
+        </footer>
 
-            <h2>Getränke</h2>
-            <div class="dishes-list" id="drinks-list"></div>
-        </section>
+        <div class="modal" id="orderModal" aria-hidden="true">
+            <div class="modal__overlay" data-close="true"></div>
 
-        <section id="dessert">
-            <div class="tee">
-                <img src="img/turkishteacay.jpg" alt="Dessert Banner">
+            <div class="modal__card" role="dialog" aria-modal="true"
+                aria-labelledby="modalTitle">
+                <button class="modal__close" type="button"
+                    aria-label="Schließen" data-close="true">×</button>
+
+                <h3 class="modal__title" id="modalTitle">Bestellung
+                    bestätigt!</h3>
+                <p class="modal__text">Dankeschön! Deine Bestellung ist
+                    unterwegs. </p>
+
+                <button class="modal__btn" type="button"
+                    data-close="true">Okey</button>
             </div>
-
-            <h2>Dessert</h2>
-            <div class="dishes-list" id="dessert-list"></div>
-        </section>
+        </div>
 
         <script src="js/db.js"></script>
         <script src="js/templates.js"></script>
